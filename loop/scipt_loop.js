@@ -27,34 +27,27 @@ for (let i = 1; i < 100; i++) {
 
 // //4 Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе).
 
-// for (let i = 2; i <= mainNumber; i++) {
-//   if (mainNumber % i === 0 ? console.log("not simple number") : console.log("Yes, it's a simple number"));
-//   break;
-// }
+const mainNumber = 19;
+let isPrime = true;
 
-//  тільки тут треба ввести якусь окрему змінну, яка буде мінятись з true на false.
-// А вже пісял цикла виводити повідомлення з змінною isPrime
+for (let i = 2; i <= mainNumber- 1; i++) {
+ if (mainNumber% i === 0) {
+  isPrime = false;
+  break;
+ }
+}
+console.log(`${mainNumber} is ${isPrime ? "prime" : "not prime"}.`)
 
-// const mainNumber = 20;
-// let isPrime = true;
-// for (let i = 2; i <= mainNumber- 1; i++) {
-//  if (mainNumber% i === 0) {
-//   isPrime = false;
-//   break;
-//  }
-//  console.log(isPrime);
-// }
-
-//  Далі також вводимо змінну, змінюєм по умові всередині цикла, а лог виводимо після цикла
 
 // // 5. Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 
 let data = 81;
 isPrime = false;
+
 for (let i = 1; i <= data; i++) {
   if (3 ** i === data) {
    isPrime = true;
-    continue;
+    break;
   }
-  console.log(isPrime);
 }
+   console.log(`${data} is ${isPrime ? "true" : "false"}`);
