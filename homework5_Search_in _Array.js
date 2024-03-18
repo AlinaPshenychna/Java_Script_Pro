@@ -18,16 +18,6 @@ console.log("Сумма положительных элементов " + sum);
 console.log(quantity);
 
 // 2. Знайти мінімальний елемент масиву та його порядковий номер.
-let max = mainArray[0];
-let newArrray = mainArray.filter((item) => {
-  if (item > max) {
-    max = item;
-  }
-});
-console.log(max);
-console.log(mainArray.indexOf(max));
-
-// 3. Знайти максимальний елемент масиву та його порядковий номер.
 
 let min = mainArray[0];
 mainArray.filter((item) => {
@@ -37,6 +27,17 @@ mainArray.filter((item) => {
 });
 console.log(min);
 console.log(mainArray.indexOf(min));
+
+// 3. Знайти максимальний елемент масиву та його порядковий номер.
+
+let max = mainArray[0];
+let newArrray = mainArray.filter((item) => {
+  if (item > max) {
+    max = item;
+  }
+});
+console.log(max);
+console.log(mainArray.indexOf(max));
 
 // 4. Визначити кількість негативних елементів.
 
@@ -58,10 +59,57 @@ let newwArray = mainArray.filter((item) => {
 });
 console.log(elementsQuantity);
 
-let test = [5, 2, -2, 7, 4, 9];
+// 6. Знайти кількість парних позитивних елементів.
+let elemQuantity = 0;
+let newArrayPositive = mainArray.filter((item) => {
+  if (item > 0 && item % 2 == 0) {
+    elemQuantity++;
+  }
+});
+console.log(elemQuantity);
 
-// Знайти кількість парних позитивних елементів.
-// Знайти суму парних позитивних елементів.
-// Знайти суму непарних позитивних елементів.
-// Знайти добуток позитивних елементів.
-// Знайти найбільший серед елементів масиву, ост альні обнулити.
+// 7. Знайти суму парних позитивних елементів.
+
+let sumPositiveElem = 0;
+let positiveArray = mainArray.filter((item) => {
+  if (item > 0 && item % 2 == 0) {
+    sumPositiveElem += item;
+  }
+});
+console.log("Сумма парных положительных элементов " + sumPositiveElem);
+
+// 8 Знайти суму непарних позитивних елементів.
+
+let sumElem = 0;
+let negativeArray = mainArray.filter((item) => {
+  if (item > 0 && item % 2 !== 0) {
+    sumElem += item;
+  }
+});
+console.log("Сумма непарных положительных элементов " + sumElem);
+
+// 9 Знайти добуток позитивних елементів.
+
+let multiElem = mainArray
+  .filter((item) => item > 0)
+  .reduce((acc, currentValue) => {
+    return acc * currentValue;
+  });
+console.log("Произведение положительных элементов " + multiElem);
+
+//10  Знайти найбільший серед елементів масиву, остальні обнулити.
+
+let maxValue = mainArray[0];
+
+for (let i = 1; i < mainArray.length; i++) {
+  if (mainArray[i] > maxValue) {
+    maxValue = mainArray[i];
+  }
+}
+for (let i = 0; i < mainArray.length; i++) {
+  if (mainArray[i] !== maxValue) {
+    mainArray[i] = 0;
+  }
+}
+console.log("Макс значение", maxValue);
+console.log("После обнуления", mainArray);
