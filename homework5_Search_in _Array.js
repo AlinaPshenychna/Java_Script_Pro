@@ -51,22 +51,20 @@ console.log(quantityNegative);
 
 // 5. Знайти кількість непарних позитивних елементів.
 
-let elementsQuantity = 0;
-let newwArray = mainArray.filter((item) => {
+let newArray = mainArray.filter((item) => {
   if (item > 0 && item % 2 !== 0) {
-    elementsQuantity++;
+    return item;
   }
 });
-console.log(elementsQuantity);
+console.log(newArray.length);
 
 // 6. Знайти кількість парних позитивних елементів.
-let elemQuantity = 0;
 let newArrayPositive = mainArray.filter((item) => {
   if (item > 0 && item % 2 == 0) {
-    elemQuantity++;
+    return item;
   }
 });
-console.log(elemQuantity);
+console.log(newArrayPositive.length);
 
 // 7. Знайти суму парних позитивних елементів.
 
@@ -100,16 +98,17 @@ console.log("Произведение положительных элемент�
 //10  Знайти найбільший серед елементів масиву, остальні обнулити.
 
 let maxValue = mainArray[0];
+mainArray.forEach((item) => {
+  if (item > maxValue) {
+    maxValue = item;
+  }
+});
+let newwArray = mainArray.map((item) => {
+  if (item !== maxValue) {
+   return 0;
+  }
+  return maxValue;
+});
 
-for (let i = 1; i < mainArray.length; i++) {
-  if (mainArray[i] > maxValue) {
-    maxValue = mainArray[i];
-  }
-}
-for (let i = 0; i < mainArray.length; i++) {
-  if (mainArray[i] !== maxValue) {
-    mainArray[i] = 0;
-  }
-}
 console.log("Макс значение", maxValue);
-console.log("После обнуления", mainArray);
+console.log("После обнуления", newwArray);
