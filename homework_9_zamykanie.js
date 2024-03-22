@@ -1,12 +1,17 @@
-function getCounter() {
+// Написати функцію, яка приймає 1 параметр. з тим, що передали перший раз і т. д.
+// Все це із замиканнями, наприклад:
+// sum(3) = 3
+// sum(5) = 8
+// sum(20) = 28
+
+function getSum() {
   let counter = 0;
-  return function () {
-    return counter++;
+  return function (param) {
+    return (counter += param);
   };
 }
-let count1 = getCounter();
+let sum = getSum();
 
-console.log(count1);
-console.log(count()); // 0
-console.log(count()); // 1
-console.log(count()); // 2
+console.log(sum(3));
+console.log(sum(5));
+console.log(sum(20));
