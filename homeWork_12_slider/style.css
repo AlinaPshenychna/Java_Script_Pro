@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  background: aqua;
+  padding: 20px;
+  margin: 0 auto;
+}
+.slider {
+  border: solid black;
+  width: 640px;
+  height: 100%;
+  margin: 50px auto;
+  overflow: hidden;
+}
+.slider-line {
+  height: 100%;
+  width: 2396px;
+  display: flex;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
+}
+.buttons {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+button {
+  border-radius: 10px;
+  font-size: 20px;
+  background: green;
+  border: 1px solid black;
+  padding: 10px;
+  margin-right: 30px;
+}
+button:hover {
+  background: aquamarine;
+}
