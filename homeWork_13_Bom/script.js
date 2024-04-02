@@ -4,15 +4,17 @@
 //     +login - я, як юзер, хочу клікнути на цю кнопку та перейти в мій профіль.
 //     +за допомогою setTimeout через 2 секунди перекините на profile сторінку
 //     +ці 2 секунди повинен крутитись лоадер
-//     вивести в консоль значення з email + password
+//     +вивести в консоль значення з email + password
 //     +email просто поле для вводу
 //     +password просто поле для вводу
 
 //     my-profile page
 //     дістати дані про розмір screen юзера і вивести у консоль
-//     додати кнопку з текстом back, по кліку на цю кнопку переходимо назад на login сторінку ( не можна використовувати <a> )
+//     +додати кнопку з текстом back, по кліку на цю кнопку переходимо назад на
+//login сторінку ( не можна використовувати <a> )
 
-//     TO BE A HERO (optional) - взяти поточну локацію юзера і за допомогою google maps api вивести в консоль адресу користувача.
+//     TO BE A HERO (optional) - взяти поточну локацію юзера і за допомогою
+//google maps api вивести в консоль адресу користувача.
 
 const button = document.querySelector("button");
 button.setAttribute("disabled", true);
@@ -39,6 +41,7 @@ inputEmail.oninput = inputPassword.oninput = function () {
     button.setAttribute("disabled", true);
   } else {
     button.removeAttribute("disabled");
+    console.log(`Password: ${inputPassword.value} Email: ${inputEmail.value}`);
   }
 };
 
