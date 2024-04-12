@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: rgb(250, 255, 211);
+}
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.product-detail-page {
+  display: flex;
+}
+.img-container {
+  width: 638px;
+}
+
+/* .img-gallery {
+} */
+
+.discr-container {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.product-name {
+  margin-bottom: 20px;
+}
+.brend {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.brend-lego {
+  font-style: italic;
+  color: blue;
+}
+.articul {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.articul-num {
+  font-style: italic;
+}
+.price {
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.btn-buy {
+  background-color: orange;
+  font-size: 24px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  min-width: 200px;
+}
+.inform-form {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+.form-title {
+  font-weight: bold;
+  font-size: 25px;
+}
+input {
+  border-radius: 12px;
+  background: #f3f3f3;
+  border: 1px solid black;
+  height: 30px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+.form-textx {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 13px;
+  font-weight: bold;
+}
+.form-text {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 13px;
+  font-weight: bold;
+}
+.pib {
+  margin-bottom: 15px;
+}
+.city-drop-down {
+  border-radius: 12px;
+  background: #f3f3f3;
+  border: 1px solid black;
+  height: 30px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+.post-number {
+  border: 1px solid black;
+  width: 40px;
+  border-radius: 7px;
+  padding-left: 10px;
+}
+.pay-method {
+  margin-top: 20px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+.payment-form {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.custom-radio {
+  padding-bottom: 5px;
+}
+.pay-radio {
+  height: 13px;
+  margin-right: 10px;
+}
+.product-quantity {
+  border: 1px solid black;
+  width: 40px;
+  border-radius: 7px;
+  padding-left: 10px;
+}
+.coment-field {
+  margin-top: 20px;
+}
+.btn-send {
+  background-color: orange;
+  font-size: 24px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  min-width: 200px;
+  margin-top: 20px;
+}
