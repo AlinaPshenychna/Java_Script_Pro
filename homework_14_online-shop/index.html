@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <title>Forms</title>
   </head>
   <body>
     <div class="container">
@@ -23,15 +23,16 @@
         <p class="brend">Бренд: <span class="brend-lego">LEGO</span></p>
         <p class="articul">Код товару: <span class="articul-num">364165</span></p>
         <p class="price">1 149грн</p>
-        <button class="btn-buy">Купити</button>
- <div class="inform-form">
+        <input type="submit" class="btn-buy" value="Купити" name="Купити">
+        <!-- <button class="btn-buy">Купити</button> -->
+ <form class="inform-form">
     <p class="form-title">Дані для доставки</p>
 <label>
     <p class="form-textx">Прізвище Ім'я *</p>
-    <input class="pib" type="text" name="PIB" required/>
+    <input class="pib" type="text" name="Прізвище Ім'я" required/>
   </label>
 <label class="form-text">Вибиріть місто доставки</label>
-      <select class="city-drop-down" name="city" required >
+      <select class="city-drop-down" name="Місто"  required >
         <option value="Dnipro">Днiпро</option>
          <option value="Kyiv">Київ</option>
           <option value="Charkiv">Харків</option>
@@ -41,42 +42,32 @@
       </select>
       <label>
     <p class="form-text">Нова Пошта відділення</p>
-      <input class="post-number" type="number" name="post-number" required />
+      <input class="post-number" type="number" name="Нова Пошта відділення" value="Нова Пошта відділення" min="1" max="100" required />
       </label>
-
       <div class="pay-method">
         <p class="form-text">Спосіб оплати</p>
-
         <div class="payment-form">
           <label class="custom-radio">
-             <input class="pay-radio" type="radio" name="after-pay"/> Післясплата
+             <input class="pay-radio" type="radio" name="Оплата" value="Післясплата" required/> Післясплата
           </label>
                   <label class="custom-radio">
-                     <input class="pay-radio" type="radio" name="after-pay"/> Оплата банківською картою
+                     <input class="pay-radio" type="radio" name="Оплата" value="Оплата банківською картою" required/> Оплата банківською картою
                       
                   </label>
            </div>  
         </div>
                   <label>
             <p class="form-text">Введіть кількість товару</p>
-            <input class="product-quantity" type="number" name="product-quantity" />
+            <input class="product-quantity" type="number" name="Кількість товару" value="Кількість товару" min="1" max="100" required/>
           </label>
-          <textarea class="coment-field" name="comment" cols="26" rows="8" placeholder="Додайте коментар"></textarea>
-          <button class="btn-send">Відправити</button>
-      </div>
+          <textarea class="coment-field" name="Коментар" cols="26" rows="8" placeholder="Додайте коментар"></textarea>
+         <input type="submit" class="btn-send" value="Відправити" name="Відправити">
+        </form>
+        <div class="result"></div>
     </div>
       </div>
     </div>
     </div>
-   
-
-
-
-
-
-
-
-
     <script src="./script.js"></script>
   </body>
 </html>
