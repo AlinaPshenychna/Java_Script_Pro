@@ -11,15 +11,11 @@ body {
 }
 .product-detail-page {
   display: flex;
-    position: relative;
+  position: relative;
 }
 .img-container {
   width: 638px;
 }
-
-/* .img-gallery {
-} */
-
 .discr-container {
   margin-left: 25px;
   display: flex;
@@ -96,6 +92,15 @@ input {
 .pib {
   margin-bottom: 15px;
 }
+.error {
+  color: red;
+}
+.error-phone {
+  color: red;
+}
+.error-email {
+  color: red;
+}
 .city-drop-down {
   border-radius: 12px;
   background: #f3f3f3;
@@ -151,8 +156,8 @@ input {
   border: 1px solid orange;
   position: absolute;
   left: 60px;
-    bottom: 170px;
-    font-size: 20px;
-    padding: 25px;
-    line-height: 40px;
+  bottom: 170px;
+  font-size: 20px;
+  padding: 25px;
+  line-height: 40px;
 }

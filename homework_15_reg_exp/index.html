@@ -24,12 +24,18 @@
         <p class="articul">Код товару: <span class="articul-num">364165</span></p>
         <p class="price">1 149грн</p>
         <input type="submit" class="btn-buy" value="Купити" name="Купити">
-        <!-- <button class="btn-buy">Купити</button> -->
  <form class="inform-form">
     <p class="form-title">Дані для доставки</p>
 <label>
     <p class="form-textx">Прізвище Ім'я *</p>
     <input class="pib" type="text" name="Прізвище Ім'я" required/>
+    <span class="error"></span>
+    <p class="form-textx">Телефон *</p>
+    <input class="phone" type="number" name="Телефон" placeholder="38(000)0000000" required/>
+    <span class="error-phone"></span>
+    <p class="form-textx">Email</p>
+    <input class="email" type="text" name="Email" required/>
+    <span class="error-email"></span>
   </label>
 <label class="form-text">Вибиріть місто доставки</label>
       <select class="city-drop-down" name="Місто"  required >
