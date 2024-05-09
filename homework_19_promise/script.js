@@ -3,51 +3,10 @@
 // то вивести на сторінку блок з постом і зробити кнопку для отримання коментарів до посту.
 // Зробити завдання використовуючи проміси, перехопити помилки.
 
-// const btn = document.querySelector(".btn");
-// const getBtn = document.querySelector(".get-btn");
-// let inputValue;
-// let idNumber;
-
-// btn.addEventListener("click", function () {
-//   const postResult = document.querySelector(".post-result");
-//   inputValue = document.querySelector(".input-value").value;
-//   idNumber = document.querySelector(".id-number");
-
-//   fetch(`https://jsonplaceholder.typicode.com/posts/${inputValue}`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       if (inputValue && inputValue <= 100) {
-//         postResult.innerText = `${data.title} \n
-//         ${data.body} \n`;
-//         getBtn.style.display = "block";
-//         idNumber.innerText = `${data.id}`;
-//       } else {
-//         postResult.textContent = "Введите число id поста которого меньше 100";
-//       }
-//     })
-//     .catch((error) => {
-//       console.log("error");
-//     });
-// });
-
-// getBtn.addEventListener("click", function () {
-//   fetch(`https://jsonplaceholder.typicode.com/comments?postId=${inputValue}`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const postComment = document.createElement("div");
-//       postComment.innerText = `${data.name}\n
-//       ${data.email} \n
-//       ${data.body}`;
-//       document.querySelector(".main").appendChild(postComment);
-//     })
-//     .catch((error) => {
-//       console.log("error");
-//     });
-// });
-
 const btn = document.querySelector(".btn");
 const getBtn = document.querySelector(".get-btn");
 let inputValue;
+let idNumber;
 
 btn.addEventListener("click", function () {
   const postResult = document.querySelector(".post-result");
