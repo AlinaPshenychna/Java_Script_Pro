@@ -20,7 +20,7 @@ let temperature = fetch(
         Humidity: ${data.main.humidity}% \n
         Speed: ${data.wind.speed}m/s \n
         Wind: ${data.wind.deg}°`;
-    document.querySelector(".temperature").appendChild(divTemp);
+    document.querySelector(".temperature").appendChild(divTemp);  // ВАЖНО при создании дива через джс, нужно добавить его на страницу помимо того что создать
     const icon = `${data.weather[0].icon}`;
     iconUrl = `https://openweathermap.org/img/w/${icon}.png`;
     document.querySelector("img").setAttribute("src", iconUrl);
