@@ -1,1 +1,1 @@
-export const getButton = () => console.log("I'm button");
+export const getButton = () => consol.log("I'm button");
