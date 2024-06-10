@@ -1,0 +1,55 @@
+.Header {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(162, 190, 97);
+  border-radius: 10px;
+}
+.Main-menu {
+  margin-right: auto;
+}
+.Menu-list {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  list-style: none;
+}
+.Menu-list li {
+  padding-right: 30px;
+}
+.Menu-list a {
+  color: blue;
+  font-size: 16px;
+  text-decoration: none;
+}
+.Menu-list a:hover {
+  color: black;
+}
+.Phone {
+  color: blue;
+  font-size: 16px;
+  text-decoration: none;
+}
+.Phone:hover {
+  color: black;
+}
+.Logo-pic {
+  width: 50px;
+  height: 50px;
+  padding-right: 30px;
+}
+.Button {
+  border-radius: 20px;
+  padding: 10px 10px;
+  background-color: blue;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.Button:hover {
+  background-color: blanchedalmond;
+  border: solid 1px black;
+}

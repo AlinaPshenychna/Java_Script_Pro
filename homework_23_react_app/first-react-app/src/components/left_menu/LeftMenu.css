@@ -1,0 +1,27 @@
+.LeftMenu {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  background-color: rgb(194, 221, 131);
+  border-radius: 10px;
+}
+.Catalog {
+  font-size: 25px;
+  padding-left: 35px;
+  margin-bottom: 20px;
+}
+.LeftMenu-list {
+  list-style: none;
+  margin-bottom: 15px;
+  margin-top: 0;
+  padding-right: 15px;
+}
+.LeftMenu-list li {
+  margin-bottom: 15px;
+}
+.LeftMenu-list a {
+  text-decoration: none;
+}
+.LeftMenu-list a:hover {
+  color: blue;
+}

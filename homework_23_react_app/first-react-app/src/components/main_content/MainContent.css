@@ -1,0 +1,7 @@
+.Discount-pic {
+  display: flex;
+  max-width: 750px;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-top: 20px;
+}
