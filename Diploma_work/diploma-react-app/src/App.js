@@ -1,12 +1,11 @@
 import "./App.css";
-import Login from "./pages/Login/components/Login";
+import Login from "./pages/Login/Components/Login";
 
-function App() {
+const App = () => {
   return (
     <header>
-        <Login />
+      <Login />
     </header>
   );
-}
-
+};
 export default App;

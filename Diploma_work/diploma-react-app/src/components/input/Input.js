@@ -1,12 +1,9 @@
 import "./Input.css";
 
-function Input() {
-  return (
-    <div className="Input-flex">
-      <input className="Input-name" type="text" placeholder="User name" />
-      <input className="Input-password" type="password" placeholder="Password" />
-    </div>
-  ); 
-}
+const Input = ({ type, placeholder }) => (
+  <div className="Input-flex">
+    <input className="Input-name" type={type} placeholder={placeholder} />
+  </div>
+);
 
 export default Input;
