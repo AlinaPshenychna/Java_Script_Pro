@@ -5,7 +5,6 @@ function App() {
   return (
     <header>
         <Login />
-      <Login />
     </header>
   );
 }
