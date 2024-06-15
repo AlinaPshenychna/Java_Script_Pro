@@ -2,17 +2,10 @@ import "./Login.css";
 
 function Login() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
+    <div className="Container">
     </div>
   );
 }
-
-
-
-
-
 
 
 

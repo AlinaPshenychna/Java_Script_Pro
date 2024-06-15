@@ -3,10 +3,8 @@ import Login from "./pages/Login/components/Login";
 
 function App() {
   return (
-    <div className="App">
-     <header className="App-header">
+    <div className="Main-container">
       <Login/>
-      </header>
     </div>
   );
 }
