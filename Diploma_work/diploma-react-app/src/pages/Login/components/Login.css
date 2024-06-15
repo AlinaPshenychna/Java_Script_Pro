@@ -1,5 +1,5 @@
 .Container {
-  background-color: rgb(181, 21, 101);
-  width: 100px;
-  height: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
 }

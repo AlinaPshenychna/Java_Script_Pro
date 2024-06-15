@@ -1,0 +1,19 @@
+.Card-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  width: 500px;
+  height: 670px;
+}
+.Card-components {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.Login-logo {
+  margin-bottom: 85px;
+  margin-top: 80px;
+  width: 240px;
+  height: 40px;
+}
