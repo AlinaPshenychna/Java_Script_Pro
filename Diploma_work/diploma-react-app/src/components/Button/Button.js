@@ -1,9 +1,9 @@
 import "./Button.css";
 
-const Button = ({ buttonText }) => (
-  <button className="Button">
+const Button = ({ buttonText, className, icon }) => (
+  <button className={className}>
+    {icon && <div className="Button-icon">{icon}</div>}
     {buttonText}
-    </button>
+  </button>
 );
-
 export default Button;

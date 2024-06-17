@@ -9,13 +9,13 @@ const Card = () => {
   return (
     <div className="Card-container">
       <div className="Card-components">
-        <img src={LoginLogo} alt="logo Rozetka" className=" Login-logo"></img>
+        <img src={LoginLogo} alt="logo Rozetka" className="Login-logo"></img>
         <Input type="text" placeholder="User name" />
         <Input type="password" placeholder="Password" icon={<IoEyeOff />} />
-        <Button buttonText="Login" />
+        <Button buttonText="Login" className="Button" />
       </div>
     </div>
   );
-}
+};
 
 export default Card;
