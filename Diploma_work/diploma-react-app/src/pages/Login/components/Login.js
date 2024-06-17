@@ -1,9 +1,11 @@
 import "./Login.css";
 import Card from "./Card/Card";
 
-const Login = () => (
-  <div className="Container">
-    <Card />
-  </div>
-);
+const Login = () => {
+  return (
+    <div className="Container">
+      <Card />
+    </div>
+  );
+};
 export default Login;
