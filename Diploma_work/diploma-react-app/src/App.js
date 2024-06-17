@@ -1,5 +1,5 @@
 import "./App.css";
-import Login from "./pages/Login/Components/Login";
+import Login from "./pages/Login/components/Login";
 
 const App = () => {
   return (
