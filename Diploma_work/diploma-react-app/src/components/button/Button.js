@@ -1,12 +1,9 @@
 import "./Button.css";
 
-
-function Button() {
-  return (
-    <button className="Button">Login
+const Button = ({ buttontext }) => (
+  <button className="Button">
+    {buttontext}
     </button>
-  );
-  }
-
+);
 
 export default Button;
