@@ -1,6 +1,6 @@
 import "./Card.css";
 import LoginLogo from "../../../../assets/login-logo.svg";
-import Input from "../../../../components/Input/Input";
+import Input from "../../../../components/IInput/Input";
 import Button from "../../../../components/Button/Button";
 // import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
