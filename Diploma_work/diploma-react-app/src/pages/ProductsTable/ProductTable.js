@@ -1,5 +1,5 @@
 import "./ProductTable.css";
-import Table from "../ProductsTable/Table/Table";
+import Table from "../../components/Table/Table";
 import LogoProduct from "../../assets/logo-productTable.svg";
 import { IoPersonOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";

@@ -4,13 +4,12 @@ import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
 const Table = () => {
-  const products = [
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-  ];
-
+      const products = [
+        { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
+        { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
+        { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
+        { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
+      ];
   return (
     <div className="Table-main">
       <table>
@@ -40,7 +39,7 @@ const Table = () => {
         </thead>
         <tbody>
           {products.map((product, index) => (
-            <tr key={index}>
+            <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.category}</td>
               <td>{product.name}</td>
