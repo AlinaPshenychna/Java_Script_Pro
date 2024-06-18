@@ -3,7 +3,7 @@ import Card from "./Card/Card";
 
 const Login = () => {
   return (
-    <div className="Container">
+    <div className="Container-login">
       <Card />
     </div>
   );

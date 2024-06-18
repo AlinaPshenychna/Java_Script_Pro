@@ -9,6 +9,12 @@
   text-align: left;
   border: none;
   padding: 13px 103px;
-    margin-top: 37px;
-    margin-bottom: 210px;
+  margin-top: 37px;
+  position: relative;
 }
+.Button-icon {
+  color: black;
+}
+
+
+  /* margin-bottom: 210px; */
