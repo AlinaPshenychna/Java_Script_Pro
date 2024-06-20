@@ -2,16 +2,16 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-    position:relative;
+  position: relative;
 }
-.Input-name{
+.Input-name {
   background: rgb(217, 217, 217);
   border: none;
   margin-bottom: 46px;
   padding-left: 19px;
   padding-top: 20px;
   padding-bottom: 20px;
-    margin-bottom: 46px;
+  margin-bottom: 46px;
 }
 .Input-name::placeholder,
 .Input-password::placeholder {
@@ -23,9 +23,3 @@
   letter-spacing: 0%;
   text-align: left;
 }
-.Input-icon{
-position: absolute;
-right: 10px;
-top: 18px;
-}
-

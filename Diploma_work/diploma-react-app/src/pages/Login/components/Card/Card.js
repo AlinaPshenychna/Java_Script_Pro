@@ -1,9 +1,8 @@
 import "./Card.css";
+import InputPassword from "../../../../components/InputPassword/InputPassword"
 import LoginLogo from "../../../../assets/login-logo.svg";
 import Input from "../../../../components/Input/Input";
 import Button from "../../../../components/Button/Button";
-// import { IoEye } from "react-icons/io5";
-import { IoEyeOff } from "react-icons/io5";
 
 const Card = () => {
   return (
@@ -11,7 +10,7 @@ const Card = () => {
       <div className="Card-components">
         <img src={LoginLogo} alt="logo Rozetka" className="Login-logo"></img>
         <Input type="text" placeholder="User name" />
-        <Input type="password" placeholder="Password" icon={<IoEyeOff />} />
+        <InputPassword/>
         <Button buttonText="Login" className="Button" />
       </div>
     </div>
