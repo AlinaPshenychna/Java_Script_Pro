@@ -1,12 +1,11 @@
 import "./InputPassword.css";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
-import React, { Component } from "react";
 import Input from "../Input/Input";
+import React, { useState } from "react";
 
 const InputPassword = () => {
   const [isEyeOn, setIsEyeOn] = useState(true);
-
   const handleClick = () => {
     setIsEyeOn(!isEyeOn);
   };

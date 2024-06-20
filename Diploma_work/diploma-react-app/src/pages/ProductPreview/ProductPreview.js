@@ -17,11 +17,6 @@ const ProductPreview = () => {
         {products.map((product) => (
           <CardProduct key={product.id} product={product} />
         ))}
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
       </div>
     </div>
   );
