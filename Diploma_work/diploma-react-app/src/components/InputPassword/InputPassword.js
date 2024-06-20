@@ -4,33 +4,20 @@ import { IoEyeOff } from "react-icons/io5";
 import React, { Component } from "react";
 import Input from "../Input/Input";
 
-class InputPassword extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isEyeOn: true };
+const InputPassword = () => {
+  const [isEyeOn, setIsEyeOn] = useState(true);
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  const handleClick = () => {
+    setIsEyeOn(!isEyeOn);
+  };
 
-  handleClick() {
-    this.setState((prevState) => ({
-      isEyeOn: !prevState.isEyeOn,
-    }));
-  }
-
-  render() {
-    return (
-      <div className="InputPassword-main">
-        <Input
-          type={this.state.isEyeOn ? "password" : "text"}
-          placeholder="Password"
-        />
-        <span className="Input-Eye-icon" onClick={this.handleClick}>
-          {this.state.isEyeOn ? <IoEye /> : <IoEyeOff />}
-        </span>
-      </div>
-    );
-  }
-}
-
+  return (
+    <div className="InputPassword-main">
+      <Input type={isEyeOn ? "password" : "text"} placeholder="Password" />
+      <span className="Input-Eye-icon" onClick={handleClick}>
+        {isEyeOn ? <IoEye /> : <IoEyeOff />}
+      </span>
+    </div>
+  );
+};
 export default InputPassword;
