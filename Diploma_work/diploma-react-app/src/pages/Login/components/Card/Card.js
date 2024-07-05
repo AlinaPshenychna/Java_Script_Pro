@@ -15,7 +15,6 @@ const Card = () => {
   });
 
   const handleLogin = () => {
-    console.log("Username:", { username }, "Password:", { password });
     if (username === "Test" && password === "12345") {
       localStorage.setItem("jwt", "AcceptToken");
       setLoginStatus("Correct");

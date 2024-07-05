@@ -12,4 +12,5 @@ const Input = ({ type, placeholder, icon, value, onChange, onBlur }) => (
     />
     {icon && <div className="Input-icon">{icon}</div>}
   </div>
-); export default Input;
+);
+export default Input;
