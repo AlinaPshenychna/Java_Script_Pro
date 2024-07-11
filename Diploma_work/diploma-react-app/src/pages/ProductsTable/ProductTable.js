@@ -5,6 +5,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import Button from "../../components/Button/Button";
 import React, { useEffect, useState } from "react";
+import { API_URL } from "../../constants";
 
 const ProductTable = () => {
   const [products, setProducts] = useState([]);
@@ -14,7 +15,7 @@ const ProductTable = () => {
   const getProducts = async () => {
     try {
       const response = await fetch(
-        "https://668fbaaec0a7969efd9947be.mockapi.io/products/products"
+        `${API_URL}products/products`
       );
       if (!response.ok) {
         throw new Error("Something went wrong");
