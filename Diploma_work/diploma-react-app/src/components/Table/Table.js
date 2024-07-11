@@ -3,13 +3,7 @@ import { PiArrowsDownUp } from "react-icons/pi";
 import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
-const Table = () => {
-  const products = [
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-    { id: 0, category: "PC", name: "lenovo", quantity: 5, price: 1000 },
-  ];
+const Table = ({products}) => {
   return (
     <div className="Table-main">
       <table>
