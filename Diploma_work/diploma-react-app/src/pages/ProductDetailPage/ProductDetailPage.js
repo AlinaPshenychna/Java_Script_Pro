@@ -6,7 +6,7 @@ import { API_URL } from "../../constants";
 import { useParams } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { formatQuantity } from "../../utils/formatQuantity.js";
+import { formatQuantity } from "../../utils/formatQuantity";
 
 const ProductDetailPage = () => {
   const [product, setProduct] = useState([]);
