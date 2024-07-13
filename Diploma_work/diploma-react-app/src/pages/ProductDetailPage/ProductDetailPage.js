@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants";
 import { useParams } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const ProductDetailPage = () => {
   const [product, setProduct] = useState([]);
@@ -45,17 +46,19 @@ const ProductDetailPage = () => {
     <div className="Pdp">
       <img src={LogoHeader} alt="logo-rozetka"></img>
       <div className="Pdp-container">
-        <h1 className="Pdp-title">
-          <FaArrowLeftLong className="Arrow-title" />
-          {product.name}
-        </h1>
-        <div className="product-flex">
+        <div className="Arrow-position">
+          <Link to="/ProductPreview" className="Pdp-link">
+            <FaArrowLeftLong className="Arrow-title" />
+            <h1 className="Pdp-title">{product.name}</h1>
+          </Link>
+        </div>
+        <div className="Pdp-flex">
           <img
             src={ProductPicture}
             alt="ProductPicture"
             className="Product-img"
           ></img>
-          <div>
+          <div className="Pdp-right-side">
             <p className="Pdp-available"> Є в наявності</p>
             <p className="Pdp-price">{product.price}₴</p>
             <p className="Pdp-quantity">
@@ -63,6 +66,11 @@ const ProductDetailPage = () => {
             </p>
           </div>
         </div>
+        <div className="Pdp-disc-title">
+          Опис
+          <span className="Pdp-title-hide"> {product.name}</span>
+        </div>
+        <p className="Pdp-discription">{product.discription}</p>
       </div>
     </div>
   );
