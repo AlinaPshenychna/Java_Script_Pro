@@ -6,6 +6,7 @@ import { FaPlus } from "react-icons/fa6";
 import Button from "../../components/Button/Button";
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants";
+import { Link } from "react-router-dom";
 
 const ProductTable = () => {
   const [products, setProducts] = useState([]);
@@ -14,9 +15,7 @@ const ProductTable = () => {
 
   const getProducts = async () => {
     try {
-      const response = await fetch(
-        `${API_URL}products/products`
-      );
+      const response = await fetch(`${API_URL}products/products`);
       if (!response.ok) {
         throw new Error("Something went wrong");
       }
@@ -37,13 +36,15 @@ const ProductTable = () => {
     <div className="Container">
       <img src={LogoProduct} alt="logo Rozetka" className="Logo-product"></img>
       <div className="Btn-flex">
-        <Button
-          buttonText="Preview"
-          className="ProductTable-btn-review"
-          icon={
-            <IoPersonOutline style={{ position: "absolute", left: "35px" }} />
-          }
-        />
+        <Link to="/ProductPreview">
+          <Button
+            buttonText="Preview"
+            className="ProductTable-btn-review"
+            icon={
+              <IoPersonOutline style={{ position: "absolute", left: "35px" }} />
+            }
+          />
+        </Link>
         <Button
           buttonText="Add product"
           className="ProductTable-btn-add_products"

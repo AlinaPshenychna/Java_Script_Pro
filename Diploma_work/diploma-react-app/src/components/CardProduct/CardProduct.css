@@ -9,6 +9,9 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+.CardProduct-link {
+  text-decoration: none;
+}
 .flex {
   display: flex;
   justify-content: space-between;

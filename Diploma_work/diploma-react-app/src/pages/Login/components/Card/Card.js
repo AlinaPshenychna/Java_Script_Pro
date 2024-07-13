@@ -4,6 +4,7 @@ import InputPassword from "../../../../components/InputPassword/InputPassword";
 import LoginLogo from "../../../../assets/login-logo.svg";
 import Input from "../../../../components/Input/Input";
 import Button from "../../../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Card = () => {
   const [username, setUsername] = useState("");
@@ -14,10 +15,13 @@ const Card = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleLogin = () => {
     if (username === "Test" && password === "12345") {
       localStorage.setItem("jwt", "AcceptToken");
       setLoginStatus("Correct");
+      navigate("/ProductTable");
     } else {
       setLoginStatus("Error");
     }
