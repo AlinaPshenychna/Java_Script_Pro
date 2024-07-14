@@ -8,10 +8,10 @@ import Modal from "@mui/material/Modal";
 import React, { useState } from "react";
 
 const Table = ({ products, deleteProduct }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const handleOpen = (product) => {
+  const handleOpenDeleteWindow = (product) => {
     setSelectedProduct(product);
     setOpen(true);
   };
@@ -71,7 +71,7 @@ const Table = ({ products, deleteProduct }) => {
                 {
                   <MdDelete
                     className="Table-icon"
-                    onClick={() => handleOpen(product)}
+                    onClick={() => handleOpenDeleteWindow(product)}
                   />
                 }
               </td>

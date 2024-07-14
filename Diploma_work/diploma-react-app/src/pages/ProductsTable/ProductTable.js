@@ -42,9 +42,7 @@ const ProductTable = () => {
       if (!response.ok) {
         throw new Error("Failed to delete the product");
       }
-      setProducts((prevProducts) =>
-        prevProducts.filter((product) => product.id !== id)
-      );
+      await getProducts();
     } catch (error) {
       console.error("Error:", error);
     }
