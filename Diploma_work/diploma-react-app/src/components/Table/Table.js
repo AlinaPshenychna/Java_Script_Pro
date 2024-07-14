@@ -7,23 +7,23 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import React, { useState } from "react";
 
-const Table = ({ products, deleteProduct }) => {
-  const [open, setOpen] = useState(false);
+const Table = ({ products, deleteProduct, onEdit }) => {
+  const [openDelete, setOpenDelete] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const handleOpenDeleteWindow = (product) => {
     setSelectedProduct(product);
-    setOpen(true);
+    setOpenDelete(true);
   };
 
-  const handleClose = () => {
+  const handleCloseDeleteWindow = () => {
     setSelectedProduct(null);
-    setOpen(false);
+    setOpenDelete(false);
   };
 
   const handleDelete = () => {
     deleteProduct(selectedProduct.id);
-    handleClose();
+    handleCloseDeleteWindow();
   };
 
   return (
@@ -66,6 +66,7 @@ const Table = ({ products, deleteProduct }) => {
                   <MdModeEdit
                     className="Table-icon"
                     style={{ paddingRight: "9px" }}
+                    onClick={() => onEdit(product)}
                   />
                 }
                 {
@@ -80,8 +81,8 @@ const Table = ({ products, deleteProduct }) => {
         </tbody>
       </table>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={openDelete}
+        onClose={handleCloseDeleteWindow}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -89,7 +90,7 @@ const Table = ({ products, deleteProduct }) => {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Are you sure you want to delete this product?
           </Typography>
-          <Button className="Modal-btn-close" onClick={handleClose}>
+          <Button className="Modal-btn-close" onClick={handleCloseDeleteWindow}>
             Cancel
           </Button>
           <Button className="Modal-btn-delete" onClick={handleDelete}>
