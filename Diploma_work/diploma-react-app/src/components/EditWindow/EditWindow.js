@@ -7,7 +7,14 @@ import "./EditWindow.css";
 import { formatQuantity } from "../../utils/formatQuantity";
 import { IoCloseSharp } from "react-icons/io5";
 
-const EditWindow = ({ handleClose, product, submitProduct, open }) => {
+const EditWindow = ({
+  handleClose,
+  product,
+  submitProduct,
+  open,
+  addProduct,
+}) => {
+  const [error, setError] = useState(false);
   const [editedProduct, setEditedProduct] = useState({
     category: "",
     name: "",
@@ -31,6 +38,15 @@ const EditWindow = ({ handleClose, product, submitProduct, open }) => {
   };
 
   const handleSave = () => {
+    if (
+      !editedProduct.category ||
+      !editedProduct.name ||
+      !editedProduct.quantity ||
+      !editedProduct.price
+    ) {
+      setError("Don't left empty fields");
+      return;
+    }
     submitProduct(editedProduct);
     handleClose();
   };
@@ -60,6 +76,7 @@ const EditWindow = ({ handleClose, product, submitProduct, open }) => {
           value={editedProduct.category}
           name="category"
           onChange={handleChange}
+          required
         />
         <Input
           id="outlined-basic"
@@ -68,6 +85,7 @@ const EditWindow = ({ handleClose, product, submitProduct, open }) => {
           value={editedProduct.name}
           name="name"
           onChange={handleChange}
+          required
         />
         <Input
           id="outlined-basic"
@@ -76,6 +94,7 @@ const EditWindow = ({ handleClose, product, submitProduct, open }) => {
           value={formatQuantity(editedProduct.quantity)}
           name="quantity"
           onChange={handleChange}
+          required
         />
         <Input
           id="outlined-basic"
@@ -84,6 +103,7 @@ const EditWindow = ({ handleClose, product, submitProduct, open }) => {
           value={editedProduct.price}
           name="price"
           onChange={handleChange}
+          required
         />
         <Input
           id="outlined-basic"
@@ -93,6 +113,7 @@ const EditWindow = ({ handleClose, product, submitProduct, open }) => {
           name="qdescription"
           onChange={handleChange}
         />
+        {error && <p className="Error-text">{error}</p>}
         <div className="Edit-flex">
           <Button className="Modal-edit-btn-close" onClick={handleClose}>
             Cancel

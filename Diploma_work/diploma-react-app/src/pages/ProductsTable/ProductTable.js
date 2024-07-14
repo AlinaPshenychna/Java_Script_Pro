@@ -57,6 +57,10 @@ const ProductTable = () => {
         `${API_URL}products/products/${product.id}`,
         {
           method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(product),
         }
       );
       if (!response.ok) {
@@ -117,6 +121,7 @@ const ProductTable = () => {
           handleClose={handleCloseEditWindow}
           product={selectedProduct}
           submitProduct={submitProduct}
+          updateProducts={getProducts}
         />
       )}
     </div>
