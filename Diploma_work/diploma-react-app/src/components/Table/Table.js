@@ -1,9 +1,31 @@
 import "./Table.css";
 import { PiArrowsDownUp } from "react-icons/pi";
-import { MdModeEdit } from "react-icons/md";
-import { MdDelete } from "react-icons/md";
+import { MdModeEdit, MdDelete } from "react-icons/md";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import React, { useState } from "react";
 
-const Table = ({products}) => {
+const Table = ({ products, deleteProduct }) => {
+  const [open, setOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleOpenDeleteWindow = (product) => {
+    setSelectedProduct(product);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setSelectedProduct(null);
+    setOpen(false);
+  };
+
+  const handleDelete = () => {
+    deleteProduct(selectedProduct.id);
+    handleClose();
+  };
+
   return (
     <div className="Table-main">
       <table>
@@ -40,13 +62,41 @@ const Table = ({products}) => {
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>
-                {<MdModeEdit style={{ color: "black" }} />}
-                {<MdDelete style={{ color: "black" }} />}
+                {
+                  <MdModeEdit
+                    className="Table-icon"
+                    style={{ paddingRight: "9px" }}
+                  />
+                }
+                {
+                  <MdDelete
+                    className="Table-icon"
+                    onClick={() => handleOpenDeleteWindow(product)}
+                  />
+                }
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className="Modal-box">
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Are you sure you want to delete this product?
+          </Typography>
+          <Button className="Modal-btn-close" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button className="Modal-btn-delete" onClick={handleDelete}>
+            Delete
+          </Button>
+        </Box>
+      </Modal>
     </div>
   );
 };
