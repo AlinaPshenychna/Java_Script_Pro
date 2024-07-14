@@ -15,7 +15,9 @@ const ProductTable = () => {
 
   const getProducts = async () => {
     try {
-      const response = await fetch(`${API_URL}products/products`);
+      const response = await fetch(`${API_URL}products/products`, {
+        method: "GET",
+      });
       if (!response.ok) {
         throw new Error("Something went wrong");
       }
@@ -31,6 +33,22 @@ const ProductTable = () => {
   useEffect(() => {
     getProducts();
   }, []);
+
+  const deleteProduct = async (id) => {
+    try {
+      const response = await fetch(`${API_URL}products/products/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Failed to delete the product");
+      }
+      setProducts((prevProducts) =>
+        prevProducts.filter((product) => product.id !== id)
+      );
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <div className="Container">
@@ -54,7 +72,9 @@ const ProductTable = () => {
       <h1 className="Title">Products</h1>
       {isLoading && <div>Loading...</div>}
       {isError && <div>Error</div>}
-      {!isLoading && !isError && <Table products={products} />}
+      {!isLoading && !isError && (
+        <Table products={products} deleteProduct={deleteProduct} />
+      )}
     </div>
   );
 };
