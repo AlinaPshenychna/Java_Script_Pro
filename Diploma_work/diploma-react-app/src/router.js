@@ -5,6 +5,7 @@ import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import Error from "./pages/Error/Error";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./privatRoute";
+import EditWindow from "./components/EditWindow/EditWindow";
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -17,6 +18,7 @@ const AppRouter = () => (
           path="/ProductDetailPage/:productId"
           element={<ProductDetailPage />}
         />
+        <Route path="/EditWindow" element={<EditWindow/>} />
       </Route>
       <Route path="*" element={<Error />} />
     </Routes>

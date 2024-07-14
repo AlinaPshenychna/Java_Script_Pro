@@ -7,11 +7,14 @@ import Button from "../../components/Button/Button";
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants";
 import { Link } from "react-router-dom";
+import EditWindow from "../../components/EditWindow/EditWindow";
 
 const ProductTable = () => {
   const [products, setProducts] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isEditWindowOpen, setIsEditWindowOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const getProducts = async () => {
     try {
@@ -48,6 +51,36 @@ const ProductTable = () => {
     }
   };
 
+  const submitProduct = async (product) => {
+    try {
+      const response = await fetch(
+        `${API_URL}products/products/${product.id}`,
+        {
+          method: "PUT",
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to update the product");
+      }
+      await getProducts();
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  const handleOpenEditWindow = (product) => {
+    setSelectedProduct(product);
+    setIsEditWindowOpen(true);
+  };
+
+  const handleAddProduct = () => {
+    setSelectedProduct(null);
+    setIsEditWindowOpen(true);
+  };
+
+  const handleCloseEditWindow = () => {
+    setIsEditWindowOpen(false);
+  };
+
   return (
     <div className="Container">
       <img src={LogoProduct} alt="logo Rozetka" className="Logo-product"></img>
@@ -64,6 +97,7 @@ const ProductTable = () => {
         <Button
           buttonText="Add product"
           className="ProductTable-btn-add_products"
+          onClick={handleAddProduct}
           icon={<FaPlus style={{ position: "absolute", left: "5px" }} />}
         />
       </div>
@@ -71,7 +105,19 @@ const ProductTable = () => {
       {isLoading && <div>Loading...</div>}
       {isError && <div>Error</div>}
       {!isLoading && !isError && (
-        <Table products={products} deleteProduct={deleteProduct} />
+        <Table
+          products={products}
+          onEdit={handleOpenEditWindow}
+          deleteProduct={deleteProduct}
+        />
+      )}
+      {isEditWindowOpen && (
+        <EditWindow
+          open={isEditWindowOpen}
+          handleClose={handleCloseEditWindow}
+          product={selectedProduct}
+          submitProduct={submitProduct}
+        />
       )}
     </div>
   );
